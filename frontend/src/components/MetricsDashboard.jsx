@@ -3,15 +3,17 @@ const formatMs = (value) => (value ? `${Math.round(value)} ms` : 'N/A');
 const MetricsDashboard = ({ data }) => {
   if (!data) return null;
 
-  const {
+const {
+  metrics: {
     fcp,
     lcp,
     cls,
     seoScore,
     performanceScore,
-    accessibilityScore,
-    opportunities,
-  } = data;
+    accessibilityScore
+  } = {},
+  opportunities,
+} = data;
 
   return (
     <div className="dashboard-container">
